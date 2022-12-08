@@ -1,0 +1,46 @@
+<% if @res.valid? %>
+  <% if @ok1 %>
+    <br>
+    <table border = '1'>
+      <tr>
+        <th style="text-align: center">Number</th>
+        <th style="text-align: center">Squares</th>
+      </tr>
+    <% @array.each_with_index do |n, i| %>
+      <tr>
+        <td style="text-align: center"><%= i+1 %></td>
+        <td style="text-align: center"><%= n['sequence'].split.join(' ') %></td>
+      </tr>
+    <% end %>
+    </table>
+    <h3>Количество последовательностей: <%= @array.size %></h3>
+    <h3>Самая длинная последовательность: <%= @max_string %></h3>
+    <% if @ok2 %>
+      <h2>Последнее добавление в базу была строка: <%= @last.sequence %></h2>
+      <table border = '1'>
+        <tr>
+          <th style="text-align: center">Number</th>
+          <th style="text-align: center">Squares</th>
+        </tr>
+      <% @last_array.each_with_index do |n, i| %>
+        <tr>
+          <td style="text-align: center"><%= i+1 %></td>
+          <td style="text-align: center"><%= n['sequence'].split.join(' ') %></td>
+        </tr>
+      <% end %>
+      </table>
+      <h3>Количество последовательностей: <%= @last_array.size %></h3>
+      <h3>Самая длинная последовательность: <%= @last_max_string %></h3>
+    <% end %>
+    
+  <% else %>
+    <h2>В последовательности нет квадратов</h2>
+  <% end %>
+<% else %>
+ <h2>Ошибки ввода:<h2>
+  <ul>
+    <% @res.errors.each do |error| %>
+	  <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+<% end %>

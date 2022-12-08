@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'sequence/input'
   root 'sequence#input'
-  post 'sequence/result'
+  post '/result', to: 'sequence#result'
+  get 'show_xml', to: 'sequence#show_xml'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

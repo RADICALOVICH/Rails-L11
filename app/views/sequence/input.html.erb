@@ -1,2 +1,17 @@
-<h1>Sequence#input</h1>
-<p>Find me in app/views/sequence/input.html.erb</p>
+<%= form_with url: result_path do |form| %>
+  <div>
+    <%= form.label :number, "Input n", style: "display:block" %>
+    <%= form.number_field :number, min: 1 %>
+  </div>
+  </br>
+  <div>
+  <%= form.label :string_array, "Input numbers", style: "display:block" %>
+  <%= form.text_field :string_array, style: "width:300px" %>
+  </div>
+  </br>
+  <div>
+    <%= form.submit('Check Result', id: 'calculate-btn') %>
+  </div>
+<% end %>
+<li><strong><%= link_to "Посмотреть все данные в базе данных", show_xml_path, class: 'nav-link px-2 text-black' %></strong></li>
+<div id='result-container'></div>
