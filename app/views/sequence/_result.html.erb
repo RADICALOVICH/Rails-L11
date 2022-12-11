@@ -1,5 +1,5 @@
 <% if @res.valid? %>
-  <% if @ok1 %>
+  <% if @array != [] %>
     <br>
     <table border = '1'>
       <tr>
@@ -15,7 +15,7 @@
     </table>
     <h3>Количество последовательностей: <%= @array.size %></h3>
     <h3>Самая длинная последовательность: <%= @max_string %></h3>
-    <% if @ok2 %>
+    <% if @last_array != [] %>
       <h2>Последнее добавление в базу была строка: <%= @last.sequence %></h2>
       <table border = '1'>
         <tr>
@@ -30,7 +30,7 @@
       <% end %>
       </table>
       <h3>Количество последовательностей: <%= @last_array.size %></h3>
-      <h3>Самая длинная последовательность: <%= @last_max_string %></h3>
+      <h3>Самая длинная последовательность: <%= @last.max_sequence&.split&.join(' ') %></h3>
     <% end %>
     
   <% else %>

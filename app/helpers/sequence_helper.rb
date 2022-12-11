@@ -2,11 +2,11 @@ module SequenceHelper
   def squares(array)
     result_array = []
     array.each_with_index do |n, i|
-      if  Math.sqrt(n).to_r.denominator == 1
-        temp_array = array.slice(i, array.size - i)
-        res = temp_array.take_while { |temp| Math.sqrt(temp).to_r.denominator == 1 }
-        result_array.push(res)
-      end
+      next unless Math.sqrt(n).to_r.denominator == 1
+
+      temp_array = array.slice(i, array.size - i)
+      res = temp_array.take_while { |temp| Math.sqrt(temp).to_r.denominator == 1 }
+      result_array.push(res)
     end
     result_array
   end
@@ -25,6 +25,6 @@ module SequenceHelper
   end
 
   def json_result_sequences
-  result_sequence.map { |n| { "sequence": n } }.to_json
+    result_sequence.map { |n| { "sequence": n } }.to_json
   end
 end

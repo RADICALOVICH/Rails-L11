@@ -29,9 +29,9 @@ RSpec.describe Result, type: :model do
 
   describe 'checking database' do
     context 'adding to database' do
-    let(:number_param) { 4 }
-    let(:string_array_param) { '1 81 3 4' }
-    let(:params) { { number: number_param, string_array: string_array_param } }
+      let(:number_param) { 4 }
+      let(:string_array_param) { '1 81 3 4' }
+      let(:params) { { number: number_param, string_array: string_array_param } }
       it 'added to db' do
         expect(Result.where(sequence: '1 81 3 4').count).to eq(0)
         Result.create(params)

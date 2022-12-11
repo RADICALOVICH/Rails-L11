@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Sequences", type: :request do
+RSpec.describe 'Sequences', type: :request do
   describe 'GET /' do
     before { get root_path } # перед каждым тестом делать запрос
 
@@ -69,7 +69,7 @@ RSpec.describe "Sequences", type: :request do
     end
 
     it 'responds with xml' do
-      expect(response.content_type).to match(%r{xml})
+      expect(response.content_type).to match(/xml/)
     end
   end
 end

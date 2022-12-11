@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_03_184723) do
+ActiveRecord::Schema[7.0].define(version: 20_221_203_184_723) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "results", primary_key: "sequence", id: :string, force: :cascade do |t|
-    t.integer "n"
-    t.json "result_sequences"
-    t.integer "max_sequence", array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'results', primary_key: 'sequence', id: :string, force: :cascade do |t|
+    t.integer 'n'
+    t.json 'result_sequences'
+    t.integer 'max_sequence', array: true
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end
