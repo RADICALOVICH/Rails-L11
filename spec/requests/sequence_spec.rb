@@ -55,7 +55,7 @@ RSpec.describe 'Sequences', type: :request do
         expect(response.content_type).to match(%r{text/vnd.turbo-stream.html})
       end
 
-      it 'assigns valid model object' do
+      it 'assigns invalid model object' do
         expect(assigns(:res).valid?).to be false
       end
     end

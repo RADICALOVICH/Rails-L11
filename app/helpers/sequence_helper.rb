@@ -12,7 +12,7 @@ module SequenceHelper
   end
 
   def string_of_input_sequence
-    string_array.split.join(' ')
+    string_array&.split&.join(' ')
   end
 
   def result_sequence
